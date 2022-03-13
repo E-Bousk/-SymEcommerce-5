@@ -12,3 +12,16 @@
         font-size: 3.5rem;
     }
 }
+
+.custom-navbar-item, .custom-navbar-item a {
+    color: #fff;
+}
+
+.custom-footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #dfeaff;
+    padding-top: 25px;
+}
