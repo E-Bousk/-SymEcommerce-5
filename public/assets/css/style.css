@@ -55,3 +55,33 @@ body {
     font-weight: bold;
 }
 /* template/product/show.html.twig */
+
+/* template/security/login.html.twig */
+.block-small {
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* template/security/login.html.twig */
+
+/* template/order/index.html.twig */
+.form-check {
+    background-color: #f4f8ff;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+
+.col-form-label {
+    font-weight: bold;
+    text-align: center;
+}
+
+.order-title {
+    padding-top: calc(0.375rem + 1px);
+}
+
+.order-summary {
+    background-color: #f4f8ff;
+    padding: 20px;
+    margin-top: 15px;
+}
+/* template/order/index.html.twig */
