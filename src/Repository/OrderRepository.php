@@ -22,6 +22,21 @@ class OrderRepository extends ServiceEntityRepository
     }
 
     /**
+     * Permet d'afficher les commandes réalisées dans l'espace membre de l'utilisteur
+     */
+    public function findSuccesfullOrders($user)
+    {
+        return $this->createQueryBuilder('o')
+                    ->andWhere('o.isPaid = true')
+                    ->andWhere('o.user = :user')
+                    ->setParameter('user', $user)
+                    ->orderBy('o.id', 'DESC')
+                    ->getQuery()
+                    ->getResult()
+        ;
+    }
+
+    /**
      * @throws ORMException
      * @throws OptimisticLockException
      */

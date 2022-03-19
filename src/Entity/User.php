@@ -169,7 +169,7 @@ class User implements UserInterface
 
     public function getFullName(): string
     {
-        return $this->getFirstname() . ' ' . $this->getLastname();
+        return sprintf('%s %s', $this->getFirstname(), $this->getLastname());
     }
 
     /**

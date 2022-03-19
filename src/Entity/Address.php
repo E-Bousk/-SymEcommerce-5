@@ -195,6 +195,6 @@ class Address
 
     public function __toString()
     {
-        return $this->getName() . '[br]' . $this->getAddress() . '[br]' . $this->getPostal() . ' ' . $this->getCity() . ' (' . $this->getCountry() . ')';
+        return sprintf('%s[br]%s[br]%s %s (%s)', $this->getName(), $this->getAddress(), $this->getPostal(), $this->getCity(), $this->getCountry());
     }
 }

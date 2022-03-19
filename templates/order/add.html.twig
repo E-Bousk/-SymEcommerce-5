@@ -2,6 +2,11 @@
 
 {% block title %}Paiement de ma commande{% endblock %}
 
+{% block javascripts %}
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="{{ asset('assets/js/stripe-script.js') }}" defer></script>
+{% endblock %}
+
 {% block body %}
     <h1>Récapitulatif</h1>
     <p>Veuillez vérifiez vos informations avant de payer votre commande</p>
@@ -17,7 +22,7 @@
             <strong> Transporteur choisi :</strong>
             <br>
             <div class="form-check">
-                {{ carrier.name }} : {{ carrier.price|number_format(2, ',', '.') }} &euro;
+                {{ carrier.name }} : {{ (carrier.price / 100)|number_format(2, ',', '.') }} &euro;
                 <br>
                 {{ carrier.description }}
             </div>
@@ -54,10 +59,10 @@
             <hr>
             <strong>Sous-total : </strong>{{ (total / 100)|number_format(2, ',', '.') }} &euro;
             <br>
-            <strong>Livraison : </strong>{{ carrier.price|number_format(2, ',', '.') }} &euro;
+            <strong>Livraison : </strong>{{ (carrier.price / 100)|number_format(2, ',', '.') }} &euro;
             <hr>
-            <strong>Total : </strong>{{ ((total / 100) + carrier.price)|number_format(2, ',', '.') }} &euro;
-            <a class="mt-3 btn btn-success btn-block" href="">Payer | {{ ((total / 100) + carrier.price)|number_format(2, ',', '.') }} &euro;</a>
+            <strong>Total : </strong>{{ ((total / 100) + (carrier.price / 100))|number_format(2, ',', '.') }} &euro;
+            <a class="mt-3 btn btn-success btn-block" id="checkout-button" data-reference-for-path="{{ reference }}">Payer | {{ ((total / 100) + (carrier.price / 100))|number_format(2, ',', '.') }} &euro;</a>
         </div>
     </div>
 {% endblock %}

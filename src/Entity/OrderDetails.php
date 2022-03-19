@@ -107,4 +107,9 @@ class OrderDetails
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return sprintf('%s x %s', $this->getQuantity(), $this->getProduct());
+    }
 }
