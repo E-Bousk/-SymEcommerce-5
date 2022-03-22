@@ -9,6 +9,15 @@
     <hr>
     <strong>Commande passée le : </strong>{{ order.createdAt|date("d/m/Y") }}
     <br>
+    <strong>Statut de la commande : </strong>
+    {% if order.state is same as 1 %}
+        Paiement accepté
+    {% elseif order.state is same as 2 %}
+        Préparation en cours
+    {% elseif order.state is same as 3 %}
+        Livraison en cours
+    {% endif %}
+    <br>
     <strong>Référence de la commande: </strong><span class="badge badge-secondary">{{ order.reference }}</span>
     <br>
     <strong>Transporteur choisi : </strong>{{ order.carrierName }}

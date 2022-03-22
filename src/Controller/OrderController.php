@@ -71,7 +71,7 @@ class OrderController extends AbstractController
                                 ->setCarrierName($carrier->getName())
                                 ->setCarrierPrice($carrier->getPrice())
                                 ->setDelivery($deliveryContent)
-                                ->setIsPaid(false)
+                                ->setState(0) // 0 = paiement non effectué
                                 ->setReference(sprintf('%s-%s', $date->format('dmY'), uniqid()))
             ;
             $this->entityManager->persist($order);

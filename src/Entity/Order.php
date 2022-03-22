@@ -52,9 +52,9 @@ class Order
     private $orderDetails;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="integer")
      */
-    private $isPaid;
+    private $state;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -166,14 +166,14 @@ class Order
         return $this;
     }
 
-    public function getIsPaid(): ?bool
+	public function getState(): ?int
     {
-        return $this->isPaid;
+        return $this->state;
     }
 
-    public function setIsPaid(bool $isPaid): self
+    public function setState(int $state): self
     {
-        $this->isPaid = $isPaid;
+        $this->state = $state;
 
         return $this;
     }
