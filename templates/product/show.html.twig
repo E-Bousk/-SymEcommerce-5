@@ -16,5 +16,15 @@
             <a class="btn btn-primary" href="{{ path('app_cart_add', {id: product.id}) }}">Ajouter au panier</a>
         </div>
     </div>
+    <hr>
+    <h1 class="h3">Nos meilleures ventes</h1>
+    <p>Découvrez nos articles les plus vendus</p>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-3">
+                {{ include('_partial/single_product.html.twig') }}
+            </div>
+        {% endfor %}
+    </div>
     
 {% endblock %}
