@@ -30,7 +30,7 @@ class ProductCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setRequired(false),
             TextField::new('subtitle'),
-            TextareaField::new('description'),
+            TextareaField::new('description')->hideOnIndex(),
             BooleanField::new('isBest', 'Mettre en avant'),
             MoneyField::new('Price')->setCurrency('EUR'),
             AssociationField::new('category')
