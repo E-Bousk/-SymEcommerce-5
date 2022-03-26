@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block body %}
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous nous ferons un plaisir de vous répondre dans les meilleurs délais</p>
+    <div class="row">
+        <div class="col-md-8">
+            {{ form(form) }}
+        </div>
+        <div class="col-md-4">
+            <strong>La e-boutique</strong>
+            <hr>
+            123 boulevard de la mer, 33000 Bordeaux
+            <br>
+            06 20 30 40 50
+            <br>
+            contact@la_e-boutique.fr
+        </div>
+    </div>
+
+{% endblock %}

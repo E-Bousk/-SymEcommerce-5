@@ -85,3 +85,22 @@ body {
     margin-top: 15px;
 }
 /* template/order/index.html.twig */
+
+/* template/account/index.html.twig */
+.account-item {
+    background-color: #f1f2f6;
+    padding: 70px;
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #4b6584;
+    font-weight: bold;
+}
+
+.account-item a:hover {
+    color: #778ca3;
+    text-decoration: none;
+}
+/* template/account/index.html.twig */

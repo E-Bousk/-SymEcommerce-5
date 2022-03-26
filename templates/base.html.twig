@@ -38,7 +38,7 @@
                             <a class="nav-link" href="#">Qui sommes-nous ?</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="{{ path('app_contact') }}">Contact</a>
                         </li>
                     </ul>
                     <div class="custom-navbar-item">
@@ -56,7 +56,11 @@
         </header>
 
         <main role="main">
-
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-info">
+                    {{ message }}
+                </div>
+            {% endfor %}
             {% if block('carousel') is defined %}
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">

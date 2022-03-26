@@ -4,20 +4,35 @@
 
 {% block body %}
     <h1>Mon compte</h1>
-
     <p>Bienvenue {{ app.user.firstname }} dans votre compte.</p>
     <p>C'est dans cet espace que vous allez pouvoir gérer toutes vos informations personnelles.</p>
-
-    <hr>
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('app_admin') }}">Espace administrateur</a>
-    <br>
+        <p><small><a href="{{ path('app_admin') }}">Espace administrateur</a></small></p>
     {% endif %}
-    <a href="{{ path('app_account_edit_password') }}">Modifier mon mot de passe</a>
-    <br>
-    <a href="{{ path('app_account_address') }}">Gérer mes adresses</a>
-    <br>
-    <a href="{{ path('app_account_order') }}">Mes commandes</a>
     <hr>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/icon-padlock.png') }}" alt="icone cadenas">
+                <br>
+                <a href="{{ path('app_account_edit_password') }}">Modifier mon mot de passe</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/icon-address-book.png') }}" alt="icone livre adresse">
+                <br>
+                <a href="{{ path('app_account_address') }}">Gérer mes adresses</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="account-item text-center">
+                <img src="{{ asset('assets/img/icon-shopping-bag.png') }}" alt="icone shopping">
+                <br>
+                <a href="{{ path('app_account_order') }}">Mes commandes</a>
+            </div>
+        </div>
+    </div>
     
 {% endblock %}
